@@ -1,0 +1,589 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Happy Birthday My Love 💕</title>
+
+    <link rel="stylesheet" href="styles.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;500;600;700&family=Poppins:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet"
+    >
+
+    <!-- PAGE 2 VIDEO FIX -->
+    <style>
+        .video-page {
+            overflow: hidden;
+        }
+
+        .video-container {
+            width: 100%;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 25px 20px;
+            box-sizing: border-box;
+        }
+
+        .video-wrapper {
+            width: 100%;
+            max-width: 900px;
+            height: 65vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+            background: #000;
+            border-radius: 18px;
+        }
+
+        #birthdayVideo {
+            width: 100%;
+            height: 100%;
+            max-width: 100%;
+            max-height: 100%;
+            object-fit: contain;
+            display: block;
+            background: #000;
+        }
+
+        .video-container .next-button {
+            margin-top: 25px;
+        }
+
+        @media (max-width: 768px) {
+            .video-wrapper {
+                height: 55vh;
+                max-width: 100%;
+            }
+
+            #birthdayVideo {
+                object-fit: contain;
+            }
+        }
+    </style>
+
+</head>
+
+<body>
+
+    <!-- PARTICLES -->
+    <div class="particles" id="particles"></div>
+
+
+    <!-- ==================================================
+         PAGE 1 - START
+    ================================================== -->
+
+    <section class="page hero-page active-page" id="page1">
+
+        <div class="hero-content">
+
+            <div class="small-text">
+                A little surprise for you...
+            </div>
+
+            <h1>
+                Happy Birthday,
+                <span>Beautiful! 💕</span>
+            </h1>
+
+            <button
+                class="cta-button"
+                onclick="
+                    var song1 = document.getElementById('song1');
+
+                    song1.pause();
+                    song1.currentTime = 0;
+
+                    goToPage(2);
+
+                    setTimeout(function() {
+                        var video = document.getElementById('birthdayVideo');
+
+                        video.currentTime = 0;
+                        video.muted = false;
+                        video.volume = 1;
+
+                        video.play().catch(function(error) {
+                            console.log('Video play blocked:', error);
+                        });
+                    }, 500);
+                "
+            >
+                Start the Celebration 🎉
+            </button>
+
+            <div class="scroll-hint">
+                <span>Click to begin</span>
+
+                <div class="scroll-arrow">
+                    ↓
+                </div>
+            </div>
+
+        </div>
+
+
+        <div class="floating-heart heart-1">💗</div>
+        <div class="floating-heart heart-2">💕</div>
+        <div class="floating-heart heart-3">💖</div>
+        <div class="floating-heart heart-4">💓</div>
+        <div class="floating-heart heart-5">💞</div>
+
+
+        <!-- PAGE 1 SONG -->
+
+        <audio
+            id="song1"
+            preload="auto"
+            autoplay
+            loop
+        ></audio>
+
+    </section>
+
+
+    <!-- ==================================================
+         PAGE 2 - VIDEO
+    ================================================== -->
+
+    <section class="page video-page" id="page2">
+
+        <div class="video-container">
+
+            <h2>
+                A Special Video 💕
+            </h2>
+
+
+            <div class="video-wrapper">
+
+                <video
+                    id="birthdayVideo"
+                    src="./14.mp4"
+                    autoplay
+                    playsinline
+                    controls
+                    preload="auto"
+                ></video>
+
+            </div>
+
+
+            <button
+                class="next-button"
+                onclick="
+                    var video = document.getElementById('birthdayVideo');
+                    var song2 = document.getElementById('song2');
+
+                    video.pause();
+                    video.currentTime = 0;
+
+                    song2.currentTime = 0;
+
+                    goToPage(3);
+
+                    song2.play().catch(function(error) {
+                        console.log('Song 2 play blocked:', error);
+                    });
+                "
+            >
+                Continue to the Memories
+                <span>→</span>
+            </button>
+
+        </div>
+
+    </section>
+
+
+    <!-- ==================================================
+         PAGE 3 - PHOTOS
+    ================================================== -->
+
+    <section class="page gallery-page" id="page3">
+
+        <div class="page-heading">
+
+            <span class="heading-small">
+                My little universe ✨
+            </span>
+
+            <h2>
+                Some Beautiful Pictures
+            </h2>
+
+        </div>
+
+
+        <div class="carousel-area">
+
+            <button
+                class="carousel-arrow left-arrow"
+                onclick="moveCarousel(-1)"
+            >
+                ‹
+            </button>
+
+
+            <div
+                class="coverflow"
+                id="coverflow"
+            >
+
+                <!-- PHOTO 1 -->
+
+                <div
+                    class="photo-card"
+                    data-index="0"
+                >
+
+                    <div class="photo-image">
+
+                        <img
+                            src="3.png"
+                            alt="Beautiful memory"
+                        >
+
+                    </div>
+
+                    <div class="photo-info">
+
+                        <h3>
+                            Every moment with you is magical
+                        </h3>
+
+                        <button
+                            class="like-btn"
+                            onclick="toggleLike(this)"
+                        >
+                            ♡
+                        </button>
+
+                    </div>
+
+                </div>
+
+
+                <!-- PHOTO 2 -->
+
+                <div
+                    class="photo-card"
+                    data-index="1"
+                >
+
+                    <div class="photo-image">
+
+                        <img
+                            src="4.png"
+                            alt="Beautiful memory"
+                        >
+
+                    </div>
+
+                    <div class="photo-info">
+
+                        <h3>
+                            Your smile lights up my world
+                        </h3>
+
+                        <button
+                            class="like-btn"
+                            onclick="toggleLike(this)"
+                        >
+                            ♡
+                        </button>
+
+                    </div>
+
+                </div>
+
+
+                <!-- PHOTO 3 -->
+
+                <div
+                    class="photo-card"
+                    data-index="2"
+                >
+
+                    <div class="photo-image">
+
+                        <img
+                            src="2.png"
+                            alt="Beautiful memory"
+                        >
+
+                    </div>
+
+                    <div class="photo-info">
+
+                        <h3>
+                            You make even the simplest moments beautiful.
+                        </h3>
+
+                        <button
+                            class="like-btn"
+                            onclick="toggleLike(this)"
+                        >
+                            ♡
+                        </button>
+
+                    </div>
+
+                </div>
+
+
+                <!-- PHOTO 4 -->
+
+                <div
+                    class="photo-card"
+                    data-index="3"
+                >
+
+                    <div class="photo-image">
+
+                        <img
+                            src="1.png"
+                            alt="Beautiful memory"
+                        >
+
+                    </div>
+
+                    <div class="photo-info">
+
+                        <h3>
+                            My heart belongs to you
+                        </h3>
+
+                        <button
+                            class="like-btn"
+                            onclick="toggleLike(this)"
+                        >
+                            ♡
+                        </button>
+
+                    </div>
+
+                </div>
+
+
+                <!-- PHOTO 5 -->
+
+                <div
+                    class="photo-card"
+                    data-index="4"
+                >
+
+                    <div class="photo-image">
+
+                        <img
+                            src="5.png"
+                            alt="Beautiful memory"
+                        >
+
+                    </div>
+
+                    <div class="photo-info">
+
+                        <h3>
+                            You look like a beautiful dream in pink 💕
+                        </h3>
+
+                        <button
+                            class="like-btn"
+                            onclick="toggleLike(this)"
+                        >
+                            ♡
+                        </button>
+
+                    </div>
+
+                </div>
+
+
+                <!-- PHOTO 6 -->
+
+                <div
+                    class="photo-card"
+                    data-index="5"
+                >
+
+                    <div class="photo-image">
+
+                        <img
+                            src="6.png"
+                            alt="Beautiful memory"
+                        >
+
+                    </div>
+
+                    <div class="photo-info">
+
+                        <h3>
+                            Forever and always
+                        </h3>
+
+                        <button
+                            class="like-btn"
+                            onclick="toggleLike(this)"
+                        >
+                            ♡
+                        </button>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <button
+                class="carousel-arrow right-arrow"
+                onclick="moveCarousel(1)"
+            >
+                ›
+            </button>
+
+        </div>
+
+
+        <div
+            class="carousel-dots"
+            id="carouselDots"
+        ></div>
+
+
+        <p class="swipe-text">
+            ← Swipe / Scroll →
+        </p>
+
+
+        <button
+            class="next-button"
+            onclick="
+                var song2 = document.getElementById('song2');
+                var song3 = document.getElementById('song3');
+
+                song2.pause();
+                song2.currentTime = 0;
+
+                song3.currentTime = 0;
+
+                goToPage(4);
+
+                song3.play().catch(function(error) {
+                    console.log('Song 3 play blocked:', error);
+                });
+            "
+        >
+            Continue the Surprise
+            <span>→</span>
+        </button>
+
+
+        <!-- PAGE 3 SONG -->
+
+        <audio
+            id="song2"
+            src="./15.mp4"
+            preload="auto"
+            loop
+        ></audio>
+
+    </section>
+
+
+    <!-- ==================================================
+         PAGE 4 - SPECIAL MESSAGE
+    ================================================== -->
+
+    <section
+        class="page message-page"
+        id="page4"
+    >
+
+        <div class="message-container">
+
+            <div class="final-heart">
+                💖
+            </div>
+
+            <span class="heading-small">
+                One last thing...
+            </span>
+
+            <h2>
+                A Special Message For You
+            </h2>
+
+
+            <div class="message-card">
+
+                <div class="quote-mark">
+                    “
+                </div>
+
+
+                <p>
+                    On your special day, I just want you to know
+                    how incredibly special you are.
+                </p>
+
+
+                <p>
+                    May every dream you have come true,
+                    may every day bring you happiness,
+                    and may your beautiful smile always stay the same.
+                </p>
+
+
+                <p class="final-line">
+                    Happy Birthday, Beautiful. 💕
+                </p>
+
+
+                <div class="signature">
+                    With lots of love ❤️
+                </div>
+
+            </div>
+
+
+            <div class="final-hearts">
+                💕 &nbsp; 💖 &nbsp; 💕
+            </div>
+
+        </div>
+
+
+        <!-- PAGE 4 SONG -->
+
+        <audio
+            id="song3"
+            src="./7.mp3"
+            preload="auto"
+            loop
+        ></audio>
+
+    </section>
+
+
+    <!-- ==================================================
+         JAVASCRIPT
+    ================================================== -->
+
+    <script src="./script.js"></script>
+
+</body>
+
+</html>
