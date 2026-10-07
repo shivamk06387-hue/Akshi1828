@@ -1,3 +1,4 @@
+```html
 <!DOCTYPE html>
 <html lang="en">
 
@@ -17,7 +18,6 @@
         rel="stylesheet"
     >
 
-    <!-- PAGE 2 VIDEO FIX -->
     <style>
         .video-page {
             overflow: hidden;
@@ -46,7 +46,7 @@
             border-radius: 18px;
         }
 
-        #birthdayVideo {
+        .birthday-video {
             width: 100%;
             height: 100%;
             max-width: 100%;
@@ -66,7 +66,7 @@
                 max-width: 100%;
             }
 
-            #birthdayVideo {
+            .birthday-video {
                 object-fit: contain;
             }
         }
@@ -107,17 +107,15 @@
 
                     goToPage(2);
 
-                    setTimeout(function() {
-                        var video = document.getElementById('birthdayVideo');
+                    var video = document.getElementById('video14');
 
-                        video.currentTime = 0;
-                        video.muted = false;
-                        video.volume = 1;
+                    video.currentTime = 0;
+                    video.muted = false;
+                    video.volume = 1;
 
-                        video.play().catch(function(error) {
-                            console.log('Video play blocked:', error);
-                        });
-                    }, 500);
+                    video.play().catch(function(error) {
+                        console.log('Video 14 play blocked:', error);
+                    });
                 "
             >
                 Start the Celebration 🎉
@@ -154,7 +152,7 @@
 
 
     <!-- ==================================================
-         PAGE 2 - VIDEO
+         PAGE 2 - VIDEO 14
     ================================================== -->
 
     <section class="page video-page" id="page2">
@@ -165,13 +163,12 @@
                 A Special Video 💕
             </h2>
 
-
             <div class="video-wrapper">
 
                 <video
-                    id="birthdayVideo"
+                    id="video14"
+                    class="birthday-video"
                     src="./14.mp4"
-                    autoplay
                     playsinline
                     controls
                     preload="auto"
@@ -179,19 +176,183 @@
 
             </div>
 
+            <button
+                class="next-button"
+                onclick="
+                    var video = document.getElementById('video14');
+
+                    video.pause();
+                    video.currentTime = 0;
+
+                    goToPage(3);
+
+                    var nextVideo = document.getElementById('video16');
+
+                    nextVideo.currentTime = 0;
+                    nextVideo.muted = false;
+                    nextVideo.volume = 1;
+
+                    nextVideo.play().catch(function(error) {
+                        console.log('Video 16 play blocked:', error);
+                    });
+                "
+            >
+                Continue to the Next Surprise
+                <span>→</span>
+            </button>
+
+        </div>
+
+    </section>
+
+
+    <!-- ==================================================
+         PAGE 3 - VIDEO 16
+    ================================================== -->
+
+    <section class="page video-page" id="page3">
+
+        <div class="video-container">
+
+            <h2>
+                A Special Video 💕
+            </h2>
+
+            <div class="video-wrapper">
+
+                <video
+                    id="video16"
+                    class="birthday-video"
+                    src="./16.mp4"
+                    playsinline
+                    controls
+                    preload="auto"
+                ></video>
+
+            </div>
 
             <button
                 class="next-button"
                 onclick="
-                    var video = document.getElementById('birthdayVideo');
+                    var video = document.getElementById('video16');
+
+                    video.pause();
+                    video.currentTime = 0;
+
+                    goToPage(4);
+
+                    var nextVideo = document.getElementById('video17');
+
+                    nextVideo.currentTime = 0;
+                    nextVideo.muted = false;
+                    nextVideo.volume = 1;
+
+                    nextVideo.play().catch(function(error) {
+                        console.log('Video 17 play blocked:', error);
+                    });
+                "
+            >
+                Continue to the Next Surprise
+                <span>→</span>
+            </button>
+
+        </div>
+
+    </section>
+
+
+    <!-- ==================================================
+         PAGE 4 - VIDEO 17
+    ================================================== -->
+
+    <section class="page video-page" id="page4">
+
+        <div class="video-container">
+
+            <h2>
+                A Special Video 💕
+            </h2>
+
+            <div class="video-wrapper">
+
+                <video
+                    id="video17"
+                    class="birthday-video"
+                    src="./17.mp4"
+                    playsinline
+                    controls
+                    preload="auto"
+                ></video>
+
+            </div>
+
+            <button
+                class="next-button"
+                onclick="
+                    var video = document.getElementById('video17');
+
+                    video.pause();
+                    video.currentTime = 0;
+
+                    goToPage(5);
+
+                    var nextVideo = document.getElementById('video20');
+
+                    nextVideo.currentTime = 0;
+                    nextVideo.muted = false;
+                    nextVideo.volume = 1;
+
+                    nextVideo.play().catch(function(error) {
+                        console.log('Video 20 play blocked:', error);
+                    });
+                "
+            >
+                Continue to the Next Surprise
+                <span>→</span>
+            </button>
+
+        </div>
+
+    </section>
+
+
+    <!-- ==================================================
+         PAGE 5 - VIDEO 20
+    ================================================== -->
+
+    <section class="page video-page" id="page5">
+
+        <div class="video-container">
+
+            <h2>
+                A Special Video 💕
+            </h2>
+
+            <div class="video-wrapper">
+
+                <video
+                    id="video20"
+                    class="birthday-video"
+                    src="./20.mp4"
+                    playsinline
+                    controls
+                    preload="auto"
+                ></video>
+
+            </div>
+
+            <button
+                class="next-button"
+                onclick="
+                    var video = document.getElementById('video20');
                     var song2 = document.getElementById('song2');
 
                     video.pause();
                     video.currentTime = 0;
 
-                    song2.currentTime = 0;
+                    goToPage(6);
 
-                    goToPage(3);
+                    song2.currentTime = 0;
 
                     song2.play().catch(function(error) {
                         console.log('Song 2 play blocked:', error);
@@ -208,10 +369,10 @@
 
 
     <!-- ==================================================
-         PAGE 3 - PHOTOS
+         PAGE 6 - PHOTOS
     ================================================== -->
 
-    <section class="page gallery-page" id="page3">
+    <section class="page gallery-page" id="page6">
 
         <div class="page-heading">
 
@@ -479,7 +640,7 @@
 
                 song3.currentTime = 0;
 
-                goToPage(4);
+                goToPage(7);
 
                 song3.play().catch(function(error) {
                     console.log('Song 3 play blocked:', error);
@@ -491,25 +652,27 @@
         </button>
 
 
-        <!-- PAGE 3 SONG -->
+        <!-- PAGE 6 SONG -->
 
-        <audio
+        <video
             id="song2"
             src="./15.mp4"
             preload="auto"
+            playsinline
             loop
-        ></audio>
+            style="display:none;"
+        ></video>
 
     </section>
 
 
     <!-- ==================================================
-         PAGE 4 - SPECIAL MESSAGE
+         PAGE 7 - SPECIAL MESSAGE
     ================================================== -->
 
     <section
         class="page message-page"
-        id="page4"
+        id="page7"
     >
 
         <div class="message-container">
@@ -566,7 +729,7 @@
         </div>
 
 
-        <!-- PAGE 4 SONG -->
+        <!-- PAGE 7 SONG -->
 
         <audio
             id="song3"
